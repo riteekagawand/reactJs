@@ -1,32 +1,51 @@
-
 import './App.css';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [number1, setNumber1] = useState(0);
+  const [number2, setNumber2] = useState(0);
+  const [result, setResult] = useState(0);
 
-  const increment = (value) => {
-    setCount(prevCount => prevCount + value);
+  const handleNumber1Change = function (e) {
+    setNumber1(Number(e.target.value));
   };
-  
-  const decrement = (value) => {
-    setCount(prevCount => prevCount - value);
-  };
- 
 
-  
+  const handleNumber2Change = function (e) {
+    setNumber2(Number(e.target.value));
+  };
+
+  const handleAddition = function () {
+    setResult(number1 + number2);
+  };
+
+  const handleSubtraction = function () {
+    setResult(number1 - number2);
+  };
+
+  const handleMultiplication = function () {
+    setResult(number1 * number2);
+  };
+
+  const handleDivision = function () {
+    setResult(number1 / number2);
+  };
 
   return (
     <div className="counter-container">
-      <h3> Enter Number to Perform Operations:</h3>
-      <input type="number" value={count} onChange={(e) => setCount(Number(e.target.value))} />
-      <div className="buttons">
-        <button onClick={() => increment(1)} >  + 1   </button>
-        <button onClick={() => decrement(1)} >  - 1  </button>
-        <button onClick={() => increment(10)} > +10 </button>
-        <button onClick={() => decrement(10)} >-10 </button>
+      <h3>Enter Two Numbers to Perform Operations:</h3>
+      <div className="input-container">
+        <input type="number" value={number1} onChange={handleNumber1Change} />
+        <input type="number" value={number2} onChange={handleNumber2Change} />
       </div>
-
+      <div className="buttons">
+        <button onClick={handleAddition}>Addition (+)</button>
+        <button onClick={handleSubtraction}>Subtraction (-)</button>
+        <button onClick={handleMultiplication}>Multiplication (*)</button>
+        <button onClick={handleDivision}>Division (/)</button>
+      </div>
+      <div className= "result">
+        Result: {result}
+      </div>
     </div>
   );
 }

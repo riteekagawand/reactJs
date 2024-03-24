@@ -50,7 +50,11 @@ App {
   padding: 10px;
   border: 1px solid #070707;
   border-radius: 5px;
-  background-color:skyblue; /* Added background color */
+  background-color:#E6FFCC; /* Added background color */
+}
+
+.result {
+  margin-top: 20px; /* Adjust as needed */
 }
 
 .input {
@@ -68,6 +72,11 @@ App {
   
   
 }
+.input-container {
+  display: flex;
+  gap: 10px; /* Adjust as needed */
+}
+
 
 .buttons button {
   padding: 15px 62px;
@@ -77,7 +86,7 @@ App {
   margin-right: 5px;
   font-size: 20px;
   margin-top: 15px;
-  background-color:pink; /* Added background color */
+  background-color:#CCCCFF; /* Added background color */
 }
 
 .buttons button:last-child {
