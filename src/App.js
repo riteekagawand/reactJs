@@ -6,27 +6,27 @@ function App() {
   const [number2, setNumber2] = useState(0);
   const [result, setResult] = useState(0);
 
-  const handleNumber1Change = function (e) {
+  const Number1 = function (e) {
     setNumber1(Number(e.target.value));
   };
 
-  const handleNumber2Change = function (e) {
+  const Number2 = function (e) {
     setNumber2(Number(e.target.value));
   };
 
-  const handleAddition = function () {
+  const Addition = function () {
     setResult(number1 + number2);
   };
 
-  const handleSubtraction = function () {
+  const Subtraction = function () {
     setResult(number1 - number2);
   };
 
-  const handleMultiplication = function () {
+  const Multiplication = function () {
     setResult(number1 * number2);
   };
 
-  const handleDivision = function () {
+  const Division = function () {
     setResult(number1 / number2);
   };
 
@@ -34,14 +34,14 @@ function App() {
     <div className="counter-container">
       <h3>Enter Two Numbers to Perform Operations:</h3>
       <div className="input-container">
-        <input type="number" value={number1} onChange={handleNumber1Change} />
-        <input type="number" value={number2} onChange={handleNumber2Change} />
+        <input type="number" value={number1} onChange={Number1} />
+        <input type="number" value={number2} onChange={Number2} />
       </div>
       <div className="buttons">
-        <button onClick={handleAddition}>Addition (+)</button>
-        <button onClick={handleSubtraction}>Subtraction (-)</button>
-        <button onClick={handleMultiplication}>Multiplication (*)</button>
-        <button onClick={handleDivision}>Division (/)</button>
+        <button onClick={Addition}>Addition (+)</button>
+        <button onClick={Subtraction}>Subtraction (-)</button>
+        <button onClick={Multiplication}>Multiplication (*)</button>
+        <button onClick={Division}>Division (/)</button>
       </div>
       <div className= "result">
         Result: {result}
